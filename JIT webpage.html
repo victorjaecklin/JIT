@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaecklin Industrial Transformation</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+        
+        /* Custom Colors */
+        .bg-jaecklin-blue { background-color: #0B2C4D; }
+        .text-jaecklin-blue { color: #0B2C4D; }
+        .hover-jaecklin-blue:hover { color: #0B2C4D; }
+        
+        /* Hero Image */
+        .hero-bg {
+            background-image: linear-gradient(rgba(11, 44, 77, 0.85), rgba(11, 44, 77, 0.75)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Language Utility Class */
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <!-- Make sure logo.png is in the same folder -->
+                    <img class="h-20 w-auto mr-6" src="logo.png" alt="Jaecklin Logo" onerror="this.style.display='none'"> 
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl text-jaecklin-blue tracking-wide">JAECKLIN</span>
+                        <span class="text-xs text-gray-500 tracking-widest uppercase">Industrial Transformation</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-jaecklin-blue font-medium transition">Home</a>
+                    
+                    <a href="#about" class="text-gray-600 hover:text-jaecklin-blue font-medium transition">
+                        <span class="lang-de">Profil</span>
+                        <span class="lang-en hidden">Profile</span>
+                    </a>
+
+                    <a href="#services" class="text-gray-600 hover:text-jaecklin-blue font-medium transition">
+                        <span class="lang-de">Kompetenzen</span>
+                        <span class="lang-en hidden">Expertise</span>
+                    </a>
+
+                    <!-- Language Switcher -->
+                    <div class="flex items-center bg-gray-100 rounded-full px-1 py-1">
+                        <button onclick="setLang('de')" id="btn-de" class="px-3 py-1 rounded-full text-xs font-bold bg-jaecklin-blue text-white transition">DE</button>
+                        <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 rounded-full text-xs font-bold text-gray-500 hover:text-jaecklin-blue transition">EN</button>
+                    </div>
+
+                    <a href="#contact" class="bg-jaecklin-blue text-white px-5 py-2 rounded shadow hover:bg-blue-900 transition">
+                        <span class="lang-de">Kontakt</span>
+                        <span class="lang-en hidden">Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-white pt-20">
+        <div class="text-center px-4 max-w-5xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="lang-de">Operations Excellence & Transformation</span>
+                <span class="lang-en hidden">Operations Excellence & Transformation</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light leading-relaxed">
+                <span class="lang-de">20+ Jahre Erfahrung in High-Tech Fertigung, Turnarounds und globaler Supply Chain Optimierung. Ihr Partner für komplexe strategische Neuausrichtungen.</span>
+                <span class="lang-en hidden">20+ years of experience in high-tech manufacturing, turnarounds, and global supply chain optimization. Your partner for complex strategic realignments.</span>
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#contact" class="bg-white text-jaecklin-blue px-8 py-3 rounded font-bold hover:bg-gray-100 transition">
+                    <span class="lang-de">Mandat anfragen</span>
+                    <span class="lang-en hidden">Request Mandate</span>
+                </a>
+                <a href="#about" class="border-2 border-white px-8 py-3 rounded font-bold hover:bg-white hover:text-jaecklin-blue transition">
+                    <span class="lang-de">Über Victor Jaecklin</span>
+                    <span class="lang-en hidden">About Victor Jaecklin</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Profile Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Text Content -->
+                <div class="lg:col-span-7">
+                    <h2 class="text-3xl font-bold text-jaecklin-blue mb-6">
+                        <span class="lang-de">Führungskompetenz mit technischer Tiefe</span>
+                        <span class="lang-en hidden">Leadership with Technical Depth</span>
+                    </h2>
+                    
+                    <div class="text-gray-600 text-lg space-y-4 mb-8">
+                        <p class="lang-de">
+                            Victor Jaecklin ist ein ergebnisorientierter Unternehmensführer mit umfassender Erfahrung als CEO, COO und CTO in internationalen Industrieunternehmen wie <strong>Schaeffler, Ewellix und SKF</strong>.
+                        </p>
+                        <p class="lang-en hidden">
+                            Victor Jaecklin is a results-driven leader with extensive experience as CEO, COO, and CTO in international industrial companies such as <strong>Schaeffler, Ewellix, and SKF</strong>.
+                        </p>
+
+                        <p class="lang-de">
+                            Mit einem Hintergrund in Physik (ETH Zürich, Dr. sc. nat.) und Business Administration (MBA) verbindet er analytische Schärfe mit strategischem Weitblick. Seine Expertise liegt in der Transformation von High-Tech-Fertigungsbetrieben, M&A-Integrationen und der Steigerung der operativen Profitabilität.
+                        </p>
+                        <p class="lang-en hidden">
+                            With a background in Physics (ETH Zurich, Dr. sc. nat.) and Business Administration (MBA), he combines analytical precision with strategic vision. His expertise lies in transforming high-tech manufacturing operations, M&A integrations, and driving operational profitability.
+                        </p>
+                    </div>
+
+                    <!-- Key Achievements List -->
+                    <div class="bg-gray-50 border-l-4 border-jaecklin-blue p-6 rounded-r-lg">
+                        <h3 class="font-bold text-jaecklin-blue mb-3">
+                            <span class="lang-de">Ausgewählte Erfolge</span>
+                            <span class="lang-en hidden">Selected Achievements</span>
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-jaecklin-blue mt-1 mr-3"></i>
+                                <span class="lang-de">P&L-Verantwortung für globale Werksnetzwerke (China, USA, Europa) mit bis zu 930 Mitarbeitern.</span>
+                                <span class="lang-en hidden">P&L responsibility for global plant networks (China, USA, Europe) with up to 930 employees.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-jaecklin-blue mt-1 mr-3"></i>
+                                <span class="lang-de">Leitung von Carve-outs, Restrukturierungen und erfolgreichen Unternehmensverkäufen.</span>
+                                <span class="lang-en hidden">Led carve-outs, restructurings, and successful company sales.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-jaecklin-blue mt-1 mr-3"></i>
+                                <span class="lang-de">Erfolgreicher Turnaround von Produktionsstandorten durch LEAN-Implementierung.</span>
+                                <span class="lang-en hidden">Successful turnaround of production sites through LEAN implementation.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Profile Card / Sidebar -->
+                <div class="lg:col-span-5 mt-10 lg:mt-0">
+                    <div class="bg-gray-100 p-8 rounded-xl shadow-lg">
+                        <div class="text-center mb-6">
+                            <!-- UPDATED IMAGE TAG: Make sure to save your photo as profile.jpg -->
+                            <img class="h-40 w-40 rounded-full mx-auto object-cover mb-4 shadow-md border-4 border-white" src="profile.jpg" alt="Victor Jaecklin">
+                            
+                            <h3 class="text-xl font-bold text-gray-800">Victor Jaecklin</h3>
+                            <p class="text-jaecklin-blue font-medium">Dr. sc. nat. / MBA / Dipl. Phys. ETH</p>
+                        </div>
+                        
+                        <div class="space-y-4 border-t border-gray-300 pt-6">
+                            <div>
+                                <h4 class="text-sm uppercase tracking-wider text-gray-500 font-bold mb-1">
+                                    <span class="lang-de">Ausbildung</span>
+                                    <span class="lang-en hidden">Education</span>
+                                </h4>
+                                <ul class="text-sm text-gray-700">
+                                    <li>Dr. sc. nat. (Univ. Neuchâtel)</li>
+                                    <li>MBA (GSBA Zurich)</li>
+                                    <li>Dipl. Phys. (ETH Zurich)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-sm uppercase tracking-wider text-gray-500 font-bold mb-1">
+                                    <span class="lang-de">Sprachen</span>
+                                    <span class="lang-en hidden">Languages</span>
+                                </h4>
+                                <p class="text-sm text-gray-700">
+                                    <span class="lang-de">Deutsch, Englisch (C2), Französisch (C1), Italienisch (B1)</span>
+                                    <span class="lang-en hidden">German, English (C2), French (C1), Italian (B1)</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-jaecklin-blue">
+                    <span class="lang-de">Dienstleistungen & Expertise</span>
+                    <span class="lang-en hidden">Services & Expertise</span>
+                </h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    <span class="lang-de">Strategische und operative Unterstützung für Produktionsunternehmen, Maschinenbau und Medizingeräte.</span>
+                    <span class="lang-en hidden">Strategic and operational support for manufacturing companies, mechanical engineering, and medical equipment.</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-300 border-t-4 border-jaecklin-blue">
+                    <div class="text-jaecklin-blue text-4xl mb-4"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="text-xl font-bold mb-3">
+                        <span class="lang-de">Ad interim C-Level Management</span>
+                        <span class="lang-en hidden">Interim C-Level Management</span>
+                    </h3>
+                    <p class="text-gray-600 text-sm lang-de">Überbrückung von Vakanzen auf CEO, COO oder CTO Ebene. Führung komplexer Organisationen in herausfordernden Phasen.</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Bridging vacancies at CEO, COO, or CTO level. Leading complex organizations during challenging phases.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-300 border-t-4 border-jaecklin-blue">
+                    <div class="text-jaecklin-blue text-4xl mb-4"><i class="fas fa-random"></i></div>
+                    <h3 class="text-xl font-bold mb-3">M&A, Carve-outs & Integration</h3>
+                    <p class="text-gray-600 text-sm lang-de">Führung von Carve-out-Prozessen (z.B. von SKF), Due Diligence und nahtlose Integration von Produktionsstandorten nach Übernahmen.</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Leading carve-out processes (e.g., from SKF), due diligence, and seamless integration of manufacturing sites post-acquisition.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-300 border-t-4 border-jaecklin-blue">
+                    <div class="text-jaecklin-blue text-4xl mb-4"><i class="fas fa-globe-europe"></i></div>
+                    <h3 class="text-xl font-bold mb-3">
+                        <span class="lang-de">Footprint Optimierung</span>
+                        <span class="lang-en hidden">Footprint Optimization</span>
+                    </h3>
+                    <p class="text-gray-600 text-sm lang-de">Planung von Greenfield-Projekten, Verlagerung von Werken (z.B. nach Osteuropa/China) und Konsolidierung von Standorten.</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Planning of Greenfield projects, relocation of plants (e.g., to Eastern Europe/China), and site consolidation.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-300 border-t-4 border-jaecklin-blue">
+                    <div class="text-jaecklin-blue text-4xl mb-4"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Turnaround & Lean</h3>
+                    <p class="text-gray-600 text-sm lang-de">Restrukturierung unprofitabler Einheiten. Implementierung von Lean Manufacturing und Six Sigma zur Kostensenkung.</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Restructuring of unprofitable units. Implementation of Lean Manufacturing and Six Sigma for cost reduction.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-300 border-t-4 border-jaecklin-blue">
+                    <div class="text-jaecklin-blue text-4xl mb-4"><i class="fas fa-cogs"></i></div>
+                    <h3 class="text-xl font-bold mb-3">R&D</h3>
+                    <p class="text-gray-600 text-sm lang-de">Optimierung von Entwicklungsprozessen (SCRUM), Einführung neuer Produktgenerationen und Technologiemanagement.</p>
+                    <p class="text-gray-600 text-sm lang-en hidden">Optimization of development processes (SCRUM), introduction of new product generations, and technology management.</p>
+                </div>
+
+                 <!-- Keywords Card -->
+                 <div class="bg-jaecklin-blue text-white p-8 rounded-lg shadow hover:shadow-lg transition duration-300 flex flex-col justify-center">
+                    <h3 class="text-xl font-bold mb-3">Methoden & Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-800 text-xs px-2 py-1 rounded">Lean Manufacturing</span>
+                        <span class="bg-blue-800 text-xs px-2 py-1 rounded">Six Sigma</span>
+                        <span class="bg-blue-800 text-xs px-2 py-1 rounded">SCRUM</span>
+                        <span class="bg-blue-800 text-xs px-2 py-1 rounded">Change Management</span>
+                        <span class="bg-blue-800 text-xs px-2 py-1 rounded">Divestments</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Jaecklin Industrial Transformation</h3>
+                    <p class="text-gray-400 lang-de">Executive Management für High-Tech Industrien.</p>
+                    <p class="text-gray-400 lang-en hidden">Executive Management for High-Tech Industries.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">
+                        <span class="lang-de">Kontakt</span>
+                        <span class="lang-en hidden">Contact</span>
+                    </h4>
+                    <p class="text-gray-400 mb-2 font-bold text-white">Victor Jaecklin</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Hägelerstrasse 15, 5400 Baden, Schweiz</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2"></i> +41 76 444 1066</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i> victor.jaecklin@gmail.com</p>
+		    <p class="text-gray-400"><i class="fas fa-bank mr-2"></i> 888-7</p>
+
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">
+                        <span class="lang-de">Vernetzen</span>
+                        <span class="lang-en hidden">Connect</span>
+                    </h4>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-3xl mr-4"><i class="fab fa-linkedin"></i></a>
+                    <p class="text-sm text-gray-500 mt-4 lang-de">QR-Code Scannen oder klicken.</p>
+                    <p class="text-sm text-gray-500 mt-4 lang-en hidden">Scan QR code or click.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                &copy; 2025 Jaecklin Industrial Transformation. 
+                <span class="lang-de">Alle Rechte vorbehalten.</span>
+                <span class="lang-en hidden">All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript for Language Switcher -->
+    <script>
+        function setLang(lang) {
+            const deElements = document.querySelectorAll('.lang-de');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btnDe = document.getElementById('btn-de');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'de') {
+                deElements.forEach(el => el.classList.remove('hidden'));
+                enElements.forEach(el => el.classList.add('hidden'));
+                
+                // Button Styles
+                btnDe.classList.add('bg-jaecklin-blue', 'text-white');
+                btnDe.classList.remove('text-gray-500');
+                
+                btnEn.classList.remove('bg-jaecklin-blue', 'text-white');
+                btnEn.classList.add('text-gray-500');
+            } else {
+                deElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                
+                // Button Styles
+                btnEn.classList.add('bg-jaecklin-blue', 'text-white');
+                btnEn.classList.remove('text-gray-500');
+                
+                btnDe.classList.remove('bg-jaecklin-blue', 'text-white');
+                btnDe.classList.add('text-gray-500');
+            }
+        }
+    </script>
+
+</body>
+</html>
