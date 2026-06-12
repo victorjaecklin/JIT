@@ -29,7 +29,7 @@
         
         /* Hero Image */
         .hero-bg {
-            background-image: linear-gradient(rgba(11, 44, 77, 0.85), rgba(11, 44, 77, 0.75)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000');
+            background-image: linear-gradient(rgba(11, 44, 77, 0.85), rgba(11, 44, 77, 0.75)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -46,6 +46,33 @@
         
         .mobile-menu.active {
             max-height: 500px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -84,10 +111,10 @@
                         <button onclick="setLang('en')" id="btn-en" class="px-3 py-1 rounded-full text-xs font-bold text-gray-500 hover:text-jaecklin-blue transition">EN</button>
                     </div>
 
-                    <a href="mailto:victor.jaecklin@gmail.com" class="bg-jaecklin-blue text-white px-5 py-2 rounded shadow hover:bg-blue-900 transition">
+                    <button onclick="openContactModal()" class="bg-jaecklin-blue text-white px-5 py-2 rounded shadow hover:bg-blue-900 transition">
                         <span class="lang-de">Kontakt</span>
                         <span class="lang-en hidden">Contact</span>
-                    </a>
+                    </button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -113,10 +140,10 @@
                     <button onclick="setLang('de')" id="btn-de-mobile" class="px-3 py-1 rounded-full text-xs font-bold bg-jaecklin-blue text-white transition">DE</button>
                     <button onclick="setLang('en')" id="btn-en-mobile" class="px-3 py-1 rounded-full text-xs font-bold text-gray-500 hover:text-jaecklin-blue transition">EN</button>
                 </div>
-                <a href="mailto:victor.jaecklin@gmail.com" class="block bg-jaecklin-blue text-white px-5 py-2 rounded shadow hover:bg-blue-900 transition text-center mt-2">
+                <button onclick="openContactModal()" class="block w-full bg-jaecklin-blue text-white px-5 py-2 rounded shadow hover:bg-blue-900 transition text-center mt-2">
                     <span class="lang-de">Kontakt</span>
                     <span class="lang-en hidden">Contact</span>
-                </a>
+                </button>
             </div>
         </div>
     </nav>
@@ -133,10 +160,10 @@
                 <span class="lang-en hidden">20+ years of experience in high-tech manufacturing, turnarounds, and global supply chain optimization. Your partner for complex strategic realignments.</span>
             </p>
             <div class="flex justify-center gap-4 flex-wrap">
-                <a href="mailto:victor.jaecklin@gmail.com" class="bg-white text-jaecklin-blue px-8 py-3 rounded font-bold hover:bg-gray-100 transition">
+                <button onclick="openContactModal()" class="bg-white text-jaecklin-blue px-8 py-3 rounded font-bold hover:bg-gray-100 transition">
                     <span class="lang-de">Mandat anfragen</span>
                     <span class="lang-en hidden">Request Mandate</span>
-                </a>
+                </button>
                 <a href="#about" class="border-2 border-white px-8 py-3 rounded font-bold hover:bg-white hover:text-jaecklin-blue transition">
                     <span class="lang-de">Über Victor Jaecklin</span>
                     <span class="lang-en hidden">About Victor Jaecklin</span>
@@ -159,17 +186,17 @@
                     
                     <div class="text-gray-600 text-lg space-y-4 mb-8">
                         <p class="lang-de">
-                            Victor Jaecklin ist ein ergebnisorientierter Unternehmensführer mit umfassender Erfahrung als CEO, COO und CTO in internationalen Industrieunternehmen wie <strong>Schaeffler, Ewellix und SKF</strong>. Seine Karriere ist geprägt von erfolgreichen Transformationsprojekten, strategischen Übernahmen und operativen Turnarounds.
+                            Victor Jaecklin ist ein ergebnisorientierter Unternehmensführer mit umfassender Erfahrung als CEO, COO und CTO in internationalen Industrieunternehmen wie <strong>Schaeffler, Ewellix und SKF</strong>. Seine Karriere umfasst Positionen in Schweizer, europäischen und internationalen Konzernen mit Fokus auf Profitabilität, Innovation und nachhaltiges Wachstum.
                         </p>
                         <p class="lang-en hidden">
-                            Victor Jaecklin is a results-driven leader with extensive experience as CEO, COO, and CTO in international industrial companies such as <strong>Schaeffler, Ewellix, and SKF</strong>. His career is marked by successful transformation projects, strategic acquisitions, and operational turnarounds.
+                            Victor Jaecklin is a results-driven leader with extensive experience as CEO, COO, and CTO in international industrial companies such as <strong>Schaeffler, Ewellix, and SKF</strong>. His career includes positions in Swiss, European, and international corporations with a focus on profitability, innovation, and sustainable growth.
                         </p>
 
                         <p class="lang-de">
-                            Mit einem Hintergrund in Physik (ETH Zürich, Dr. sc. nat.) und Business Administration (MBA) verbindet er analytische Schärfe mit strategischem Weitblick. Seine Expertise liegt in der Transformation von Fertigungsbetrieben, der Optimierung komplexer Supply Chains und der Führung von Organisationen durch Umbruchphasen.
+                            Mit einem Hintergrund in Physik (ETH Zürich, Dr. sc. nat.) und Business Administration (MBA) verbindet er analytische Schärfe mit strategischem Weitblick. Seine Expertise liegt in Management, Kostenreduktion, Lean Manufacturing, Digitalisierung und Organisationsentwicklung.
                         </p>
                         <p class="lang-en hidden">
-                            With a background in Physics (ETH Zurich, Dr. sc. nat.) and Business Administration (MBA), he combines analytical precision with strategic vision. His expertise lies in manufacturing transformation, complex supply chain optimization, and leading organizations through periods of change.
+                            With a background in Physics (ETH Zurich, Dr. sc. nat.) and Business Administration (MBA), he combines analytical precision with strategic vision. His expertise lies in management, cost reduction, lean manufacturing, digitalization, and organizational development.
                         </p>
                     </div>
 
@@ -365,6 +392,50 @@
         </div>
     </footer>
 
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-jaecklin-blue">
+                    <span class="lang-de">Kontakt aufnehmen</span>
+                    <span class="lang-en hidden">Get in Touch</span>
+                </h2>
+                <button onclick="closeContactModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="space-y-4">
+                <p class="text-gray-600 lang-de">Bitte wählen Sie eine Kontaktmöglichkeit:</p>
+                <p class="text-gray-600 lang-en hidden">Please choose a contact method:</p>
+                
+                <a href="mailto:victor.jaecklin@gmail.com" class="block w-full bg-jaecklin-blue text-white px-4 py-3 rounded font-bold hover:bg-blue-900 transition text-center">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span class="lang-de">Per E-Mail senden</span>
+                    <span class="lang-en hidden">Send Email</span>
+                </a>
+                
+                <a href="tel:+41764441066" class="block w-full bg-jaecklin-blue text-white px-4 py-3 rounded font-bold hover:bg-blue-900 transition text-center">
+                    <i class="fas fa-phone mr-2"></i>
+                    <span class="lang-de">Telefon anrufen</span>
+                    <span class="lang-en hidden">Call Phone</span>
+                </a>
+
+                <div class="bg-gray-100 p-4 rounded mt-6">
+                    <p class="text-sm text-gray-700 mb-3 font-bold">
+                        <span class="lang-de">Direkter Kontakt:</span>
+                        <span class="lang-en hidden">Direct Contact:</span>
+                    </p>
+                    <p class="text-sm text-gray-700 mb-1"><i class="fas fa-envelope mr-2"></i> victor.jaecklin@gmail.com</p>
+                    <p class="text-sm text-gray-700"><i class="fas fa-phone mr-2"></i> +41 76 444 1066</p>
+                </div>
+
+                <button onclick="closeContactModal()" class="w-full bg-gray-300 text-gray-700 px-4 py-2 rounded font-bold hover:bg-gray-400 transition">
+                    <span class="lang-de">Schließen</span>
+                    <span class="lang-en hidden">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Javascript for Language Switcher and Mobile Menu -->
     <script>
         function setLang(lang) {
@@ -430,10 +501,25 @@
         }
         
         // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
+        document.querySelectorAll('#mobileMenu a, #mobileMenu button').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('mobileMenu').classList.remove('active');
             });
+        });
+
+        function openContactModal() {
+            document.getElementById('contactModal').classList.add('active');
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('contactModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeContactModal();
+            }
         });
     </script>
 
